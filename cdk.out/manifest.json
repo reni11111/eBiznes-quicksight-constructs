@@ -1,0 +1,297 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "my-demo-stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "my-demo-stack.assets.json",
+        "requiresBootstrapStackVersion": 4,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "my-demo-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://981237193288/eu-central-1",
+      "properties": {
+        "templateFile": "my-demo-stack.template.json",
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::981237193288:role/cdk-hnb659fds-deploy-role-981237193288-eu-central-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::981237193288:role/cdk-hnb659fds-cfn-exec-role-981237193288-eu-central-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-981237193288-eu-central-1/749ac7117d6cad12cc4d573cae23f9ba9bcc7c22b0350abca8a02fa08cde9b1e.json",
+        "requiresBootstrapStackVersion": 4,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "my-demo-stack.assets"
+        ]
+      },
+      "dependencies": [
+        "my-demo-stack.assets"
+      ],
+      "metadata": {
+        "/my-demo-stack/DataSourceConstruct/datasourceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataSourceConstructdatasourceRole6A0E796F",
+            "trace": [
+              "new Role (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new DataSourceConstruct (/home/martin/git/cdk-quicksight-constructs/src/datasource.ts:437:13)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:18:24)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/DataSourceConstruct/createDataSource/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataSourceConstructcreateDataSourceCustomResourcePolicy7ADFC385",
+            "trace": [
+              "new Policy (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "new AwsCustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.ts:367:20)",
+              "new DataSourceConstruct (/home/martin/git/cdk-quicksight-constructs/src/datasource.ts:421:30)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:18:24)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/DataSourceConstruct/createDataSource/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataSourceConstructcreateDataSource77B79872",
+            "trace": [
+              "new CustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/custom-resource.ts:119:21)",
+              "new AwsCustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.ts:374:27)",
+              "new DataSourceConstruct (/home/martin/git/cdk-quicksight-constructs/src/datasource.ts:421:30)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:18:24)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/AWS679f53fac002430cb0da5b7982bd2287/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "trace": [
+              "new Function (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-lambda/lib/function.ts:625:35)",
+              "SingletonFunction.ensureLambda (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:119:12)",
+              "new SingletonFunction (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:55:32)",
+              "new AwsCustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.ts:335:22)",
+              "new DataSourceConstruct (/home/martin/git/cdk-quicksight-constructs/src/datasource.ts:421:30)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:18:24)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/DataSetConstruct/datasetRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataSetConstructdatasetRoleCAF6BD93",
+            "trace": [
+              "new Role (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new DataSetConstruct (/home/martin/git/cdk-quicksight-constructs/src/dataset.ts:94:13)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:29:5)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/DataSetConstruct/createDataSet/CustomResourcePolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataSetConstructcreateDataSetCustomResourcePolicy9F11BBEF",
+            "trace": [
+              "new Policy (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "new AwsCustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.ts:367:20)",
+              "new DataSetConstruct (/home/martin/git/cdk-quicksight-constructs/src/dataset.ts:78:5)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:29:5)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/DataSetConstruct/createDataSet/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DataSetConstructcreateDataSetC5AE5259",
+            "trace": [
+              "new CustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/custom-resource.ts:119:21)",
+              "new AwsCustomResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/custom-resources/lib/aws-custom-resource/aws-custom-resource.ts:374:27)",
+              "new DataSetConstruct (/home/martin/git/cdk-quicksight-constructs/src/dataset.ts:78:5)",
+              "new IntegTesting (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:29:5)",
+              "Object.<anonymous> (/home/martin/git/cdk-quicksight-constructs/test/integ.default.ts:96:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/my-demo-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:201:5)",
+              "visit (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:197:5)",
+              "injectMetadataResources (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/my-demo-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:555:17)",
+              "DefaultStackSynthesizer.synthesize (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:378:7)",
+              "/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:29",
+              "visit (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:201:5)",
+              "visit (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:197:5)",
+              "synthesizeTree (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:150:3)",
+              "Object.synthesize (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:39:3)",
+              "App.synth (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/my-demo-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:565:3)",
+              "DefaultStackSynthesizer.synthesize (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:378:7)",
+              "/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:29",
+              "visit (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:201:5)",
+              "visit (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:197:5)",
+              "synthesizeTree (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:150:3)",
+              "Object.synthesize (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/private/synthesis.ts:39:3)",
+              "App.synth (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/martin/git/cdk-quicksight-constructs/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:467:12)",
+              "process.emit (/home/martin/.npm/_npx/1bf7c3c15bf47d04/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
